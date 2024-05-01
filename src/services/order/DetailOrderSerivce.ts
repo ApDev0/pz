@@ -1,19 +1,19 @@
 import prismaClient from "../../prisma";
 
-interface DetailRequest{
+interface DetailRequest {
   order_id: string;
 }
 
-class DetailOrderSerivce{
-  async execute({ order_id }: DetailRequest){
+class DetailOrderSerivce {
+  async execute({ order_id }: DetailRequest) {
 
     const orders = await prismaClient.item.findMany({
-      where:{
+      where: {
         order_id: order_id
       },
-      include:{
-        product:true,
-        order:true,
+      include: {
+        product: true,
+        order: true,
       }
     })
 

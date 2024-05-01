@@ -11,7 +11,7 @@ export function isAuthenticated(
   next: NextFunction
 ){
 
-  // Receber o token
+  // Receber o token  
   const authToken = req.headers.authorization;
 
   if(!authToken){
